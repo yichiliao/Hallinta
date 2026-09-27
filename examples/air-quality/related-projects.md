@@ -1,0 +1,4 @@
+- [[Open Sensor Kit]]
+  - Uses its hardware with an added particle sensor.
+- [[Urban Heat Islands]]
+  - Shares sensor sites; heat and pollution peaks may coincide.

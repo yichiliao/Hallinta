@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Source Serif 4", Charter, Georgia,
+    serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+body {
+  @apply bg-stone-50 font-sans text-stone-900 antialiased;
+}
+
+/* Task lists: no bullets, checkbox inline with text, completed items muted. */
+.prose ul.contains-task-list {
+  list-style: none;
+  padding-left: 0;
+}
+.prose ul.contains-task-list ul.contains-task-list {
+  padding-left: 1.5em;
+}
+.prose li.task-list-item {
+  padding-left: 0;
+}
+.prose li.task-list-item input[type="checkbox"] {
+  margin: 0 0.55em 0 0;
+  vertical-align: -0.1em;
+  accent-color: var(--color-stone-700);
+}
+.prose li.task-list-item input[type="checkbox"]:not(:disabled) {
+  cursor: pointer;
+}
+.prose li.task-list-item:has(> input:checked),
+.prose li.task-list-item:has(> p > input:checked) {
+  color: var(--color-stone-400);
+}
+
+/* Briefly highlight a section when a source link jumps to it. */
+section:target {
+  animation: target-flash 1.6s ease-out;
+}
+@keyframes target-flash {
+  from {
+    background-color: var(--color-amber-50);
+  }
+}
+
+/* Markdown editor */
+.hallinta-editor .cm-editor {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+}
+.hallinta-editor .cm-editor.cm-focused {
+  outline: none;
+}
+.hallinta-editor .cm-content {
+  padding: 12px 4px;
+}
+.hallinta-editor .cm-gutters {
+  display: none;
+}

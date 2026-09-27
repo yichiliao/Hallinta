@@ -1,0 +1,4 @@
+- [[Open Sensor Kit]]
+  - Provides the sensor hardware and data pipeline.
+- [[Cooling Policy Study]]
+  - Uses our heat maps to evaluate city cooling programs.
